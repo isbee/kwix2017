@@ -1,0 +1,44 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme.FragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip" >
+
+            <!-- Run in background -->
+
+            <TextView
+                android:id="@+id/text_background_service"
+                style="@style/AppTheme.FormText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/check_background_service"
+                android:layout_alignBottom="@+id/check_background_service"
+                android:layout_alignParentLeft="true"
+                android:text="@string/settings_background_service" />
+
+            <CheckBox
+                android:id="@+id/check_background_service"
+                style="@style/AppTheme.FormEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true" />
+            
+
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

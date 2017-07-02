@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drowsinessLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/DrowsinessChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"></com.github.mikephil.charting.charts.LineChart>
+
+    <TextView
+        android:id="@+id/Time"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="113dp"
+        android:gravity="center"
+        android:text="@string/Time" />
+
+    <TextView
+        android:id="@+id/Index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Index2"
+        android:layout_alignBottom="@+id/Index2"
+        android:layout_alignLeft="@+id/DrowsinessChart"
+        android:layout_below="@+id/DrowsinessChart"
+        android:gravity="center"
+        android:text="@string/drowsinessIndex"
+        android:textSize="15dp" />
+
+    <ImageView
+        android:id="@+id/setting"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/DrowsinessChart"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/image_selector"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/Index2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Time"
+        android:layout_below="@+id/DrowsinessChart"
+        android:layout_marginTop="75dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="15dp" />
+
+    <ImageView
+        android:id="@+id/DrowImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DrowsinessChart"
+        android:layout_marginLeft="17dp"
+        android:layout_toRightOf="@+id/Index2" />
+
+</RelativeLayout>

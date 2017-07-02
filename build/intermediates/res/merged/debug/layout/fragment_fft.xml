@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/waveLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <ImageView
+        android:id="@+id/chartBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_alignParentRight="true"
+
+        android:background="@drawable/back_region3" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bar_chart2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:layout_marginBottom="20dp"
+         >
+    </com.github.mikephil.charting.charts.BarChart>
+
+    <TextView
+        android:id="@+id/Hz"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="@string/hz" />
+
+</RelativeLayout>

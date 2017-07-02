@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_scan"
+        android:icon="@android:drawable/ic_menu_view"
+        android:orderInCategory="10"
+
+        android:title="@string/connect" />
+    <!-- android:showAsAction="always|withText" -->
+
+    <item
+        android:id="@+id/action_discoverable"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:orderInCategory="40"
+        android:title="@string/discoverable" />
+
+</menu>

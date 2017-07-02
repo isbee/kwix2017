@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="bubbleseekbar-3.4-lite">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.xw.repo/bubbleseekbar/3.4-lite/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/build/intermediates/exploded-aar/com.xw.repo/bubbleseekbar/3.4-lite/res" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.xw.repo/bubbleseekbar/3.4-lite/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xw.repo/bubbleseekbar/3.4-lite/af1a43157966e1d07054136d0b3ea33de578d451/bubbleseekbar-3.4-lite-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

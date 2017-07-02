@@ -1,0 +1,752 @@
+[
+    {
+        "outputFile": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 198
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 177,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 320
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 203,
+                    "endLine": 10,
+                    "endColumn": 12,
+                    "endOffset": 617
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 301,
+                        "endLine": 9,
+                        "endColumn": 12,
+                        "endOffset": 715
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 622,
+                    "endLine": 16,
+                    "endColumn": 12,
+                    "endOffset": 1042
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 720,
+                        "endLine": 15,
+                        "endColumn": 12,
+                        "endOffset": 1140
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1047,
+                    "endLine": 22,
+                    "endColumn": 12,
+                    "endOffset": 1470
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1145,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1568
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1475,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1896
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1573,
+                        "endLine": 27,
+                        "endColumn": 12,
+                        "endOffset": 1994
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1901,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 2325
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1999,
+                        "endLine": 33,
+                        "endColumn": 12,
+                        "endOffset": 2423
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 2330,
+                    "endLine": 40,
+                    "endColumn": 12,
+                    "endOffset": 2750
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 34,
+                        "startColumn": 4,
+                        "startOffset": 2428,
+                        "endLine": 39,
+                        "endColumn": 12,
+                        "endOffset": 2848
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 2755,
+                    "endColumn": 88,
+                    "endOffset": 2839
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 3094,
+                        "endColumn": 88,
+                        "endOffset": 3178
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2844,
+                    "endColumn": 100,
+                    "endOffset": 2940
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 3183,
+                        "endColumn": 100,
+                        "endOffset": 3279
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 2945,
+                    "endLine": 47,
+                    "endColumn": 12,
+                    "endOffset": 3348
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 3284,
+                        "endLine": 48,
+                        "endColumn": 12,
+                        "endOffset": 3687
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 3353,
+                    "endLine": 52,
+                    "endColumn": 12,
+                    "endOffset": 3768
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 3692,
+                        "endLine": 53,
+                        "endColumn": 12,
+                        "endOffset": 4107
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 3773,
+                    "endLine": 54,
+                    "endColumn": 12,
+                    "endOffset": 3875
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 56,
+                        "startColumn": 4,
+                        "startOffset": 4353,
+                        "endLine": 57,
+                        "endColumn": 12,
+                        "endOffset": 4455
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 3880,
+                    "endLine": 56,
+                    "endColumn": 12,
+                    "endOffset": 4004
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 58,
+                        "startColumn": 4,
+                        "startOffset": 4460,
+                        "endLine": 59,
+                        "endColumn": 12,
+                        "endOffset": 4584
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 4009,
+                    "endLine": 61,
+                    "endColumn": 12,
+                    "endOffset": 4368
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 60,
+                        "startColumn": 4,
+                        "startOffset": 4589,
+                        "endLine": 64,
+                        "endColumn": 12,
+                        "endOffset": 4948
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 4373,
+                    "endColumn": 70,
+                    "endOffset": 4439
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 67,
+                        "startColumn": 4,
+                        "startOffset": 5194,
+                        "endColumn": 70,
+                        "endOffset": 5260
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 63,
+                    "startColumn": 4,
+                    "startOffset": 4444,
+                    "endColumn": 82,
+                    "endOffset": 4522
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 68,
+                        "startColumn": 4,
+                        "startOffset": 5265,
+                        "endColumn": 82,
+                        "endOffset": 5343
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 4527,
+                    "endLine": 114,
+                    "endColumn": 12,
+                    "endOffset": 8271
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 69,
+                        "startColumn": 4,
+                        "startOffset": 5348,
+                        "endLine": 119,
+                        "endColumn": 12,
+                        "endOffset": 9092
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 115,
+                    "startColumn": 4,
+                    "startOffset": 8276,
+                    "endLine": 166,
+                    "endColumn": 12,
+                    "endOffset": 12160
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BTConnectionTemplateMaster\\BTConnectionTemplateMaster\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 120,
+                        "startColumn": 4,
+                        "startOffset": 9097,
+                        "endLine": 171,
+                        "endColumn": 12,
+                        "endOffset": 12981
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 198
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 177,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 320
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 203,
+                    "endLine": 10,
+                    "endColumn": 12,
+                    "endOffset": 617
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 301,
+                        "endLine": 9,
+                        "endColumn": 12,
+                        "endOffset": 715
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 622,
+                    "endLine": 16,
+                    "endColumn": 12,
+                    "endOffset": 1042
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 720,
+                        "endLine": 15,
+                        "endColumn": 12,
+                        "endOffset": 1140
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1047,
+                    "endLine": 22,
+                    "endColumn": 12,
+                    "endOffset": 1470
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1145,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 1568
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1475,
+                    "endLine": 28,
+                    "endColumn": 12,
+                    "endOffset": 1896
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1573,
+                        "endLine": 27,
+                        "endColumn": 12,
+                        "endOffset": 1994
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1901,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 2325
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1999,
+                        "endLine": 33,
+                        "endColumn": 12,
+                        "endOffset": 2423
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 2330,
+                    "endLine": 40,
+                    "endColumn": 12,
+                    "endOffset": 2750
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 34,
+                        "startColumn": 4,
+                        "startOffset": 2428,
+                        "endLine": 39,
+                        "endColumn": 12,
+                        "endOffset": 2848
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 2755,
+                    "endColumn": 88,
+                    "endOffset": 2839
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 3094,
+                        "endColumn": 88,
+                        "endOffset": 3178
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2844,
+                    "endColumn": 100,
+                    "endOffset": 2940
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 3183,
+                        "endColumn": 100,
+                        "endOffset": 3279
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 2945,
+                    "endLine": 47,
+                    "endColumn": 12,
+                    "endOffset": 3348
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 3284,
+                        "endLine": 48,
+                        "endColumn": 12,
+                        "endOffset": 3687
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 3353,
+                    "endLine": 52,
+                    "endColumn": 12,
+                    "endOffset": 3768
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 3692,
+                        "endLine": 53,
+                        "endColumn": 12,
+                        "endOffset": 4107
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 3773,
+                    "endLine": 54,
+                    "endColumn": 12,
+                    "endOffset": 3875
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 56,
+                        "startColumn": 4,
+                        "startOffset": 4353,
+                        "endLine": 57,
+                        "endColumn": 12,
+                        "endOffset": 4455
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 3880,
+                    "endLine": 56,
+                    "endColumn": 12,
+                    "endOffset": 4004
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 58,
+                        "startColumn": 4,
+                        "startOffset": 4460,
+                        "endLine": 59,
+                        "endColumn": 12,
+                        "endOffset": 4584
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 4009,
+                    "endLine": 61,
+                    "endColumn": 12,
+                    "endOffset": 4368
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 60,
+                        "startColumn": 4,
+                        "startOffset": 4589,
+                        "endLine": 64,
+                        "endColumn": 12,
+                        "endOffset": 4948
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 4373,
+                    "endColumn": 70,
+                    "endOffset": 4439
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 67,
+                        "startColumn": 4,
+                        "startOffset": 5194,
+                        "endColumn": 70,
+                        "endOffset": 5260
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 63,
+                    "startColumn": 4,
+                    "startOffset": 4444,
+                    "endColumn": 82,
+                    "endOffset": 4522
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 68,
+                        "startColumn": 4,
+                        "startOffset": 5265,
+                        "endColumn": 82,
+                        "endOffset": 5343
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 4527,
+                    "endLine": 114,
+                    "endColumn": 12,
+                    "endOffset": 8271
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 69,
+                        "startColumn": 4,
+                        "startOffset": 5348,
+                        "endLine": 119,
+                        "endColumn": 12,
+                        "endOffset": 9092
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 115,
+                    "startColumn": 4,
+                    "startOffset": 8276,
+                    "endLine": 166,
+                    "endColumn": 12,
+                    "endOffset": 12160
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Downloads\\BT-Connection-Template-master\\BT-Connection-Template-master\\BTCTemplate\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v11\\values-v11.xml",
+                    "position": {
+                        "startLine": 120,
+                        "startColumn": 4,
+                        "startOffset": 9097,
+                        "endLine": 171,
+                        "endColumn": 12,
+                        "endOffset": 12981
+                    }
+                }
+            }
+        ]
+    }
+]
