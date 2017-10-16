@@ -385,8 +385,8 @@
     <style name="AppTheme" parent="AppBaseTheme">
 
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    <!-- 타이틀바 지우고 싶으면    <item name="android:windowNoTitle">true</item>  -->    
-        
+        <!-- 타이틀바 지우고 싶으면    <item name="android:windowNoTitle">true</item>  -->
+
 
     </style>
     <style name="AppTheme.ConnectionInfoContainer">

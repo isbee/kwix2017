@@ -45,54 +45,101 @@ public class DBHelper {
     public static final String KEY_ACCEL_HOUR = "hour";            // hour
     public static final String KEY_ACCEL_MINUTE = "minute";        // minute
     public static final String KEY_ACCEL_SECOND = "second";        // second
-    public static final String KEY_ACCEL_DATA1 = "data1";        // mSumOfDifference
-    public static final String KEY_ACCEL_DATA2 = "data2";        // mCount
-    public static final String KEY_ACCEL_DATA3 = "data3";        // mAverageDifference
+    public static final String KEY_ACCEL_DATA1 = "data1";        // mSumOfDifference    // theta wave
+    public static final String KEY_ACCEL_DATA2 = "data2";        // mCount              // Alpha Wave
+    public static final String KEY_ACCEL_DATA3 = "data3";        // mAverageDifference   // Beta Wave
     public static final String KEY_ACCEL_DATA4 = "data4";        // mSamplingInterval
     public static final String KEY_ACCEL_DATA5 = "data5";        // mTotalTime
+    public static final String KEY_ACCEL_DATA6 = "data6";        // mTotalTime
+    public static final String KEY_ACCEL_DATA7 = "data7";        // mTotalTime
+    public static final String KEY_ACCEL_DATA8 = "data8";        // mTotalTime
+    public static final String KEY_ACCEL_DATA9 = "data9";        // mTotalTime
+    public static final String KEY_ACCEL_DATA10 = "data10";        // mTotalTime
+    public static final String KEY_ACCEL_DATA11 = "data11";        // mTotalTime
+    public static final String KEY_ACCEL_DATA12 = "data12";        // mTotalTime
+    public static final String KEY_ACCEL_DATA13 = "data13";        // mTotalTime
+    public static final String KEY_ACCEL_DATA14 = "data14";        // mTotalTime
+    public static final String KEY_ACCEL_DATA15 = "data15";        // mTotalTime
+    public static final String KEY_ACCEL_DATA16 = "data16";        // mTotalTime
+    public static final String KEY_ACCEL_DATA17 = "data17";        // mTotalTime
+    public static final String KEY_ACCEL_DATA18 = "data18";        // mTotalTime
+    public static final String KEY_ACCEL_DATA19 = "data19";        // mTotalTime
+    public static final String KEY_ACCEL_DATA20 = "data20";        // mTotalTime
+    public static final String KEY_ACCEL_DATA21 = "data21";        // mTotalTime
+    public static final String KEY_ACCEL_DATA22 = "data22";        // mTotalTime
+    public static final String KEY_ACCEL_DATA23 = "data23";        // mTotalTime
+    public static final String KEY_ACCEL_DATA24 = "data24";        // mTotalTime
+    public static final String KEY_ACCEL_DATA25 = "data25";        // mTotalTime
+    public static final String KEY_ACCEL_DATA26 = "data26";        // mTotalTime
+    public static final String KEY_ACCEL_DATA27 = "data27";        // mTotalTime
+    public static final String KEY_ACCEL_DATA28 = "data28";        // mTotalTime
+    public static final String KEY_ACCEL_DATA29 = "data29";        // mTotalTime
+    public static final String KEY_ACCEL_DATA30 = "data30";        // mTotalTime
+    public static final String KEY_ACCEL_DATA31 = "data31";        // mTotalTime
+    public static final String KEY_ACCEL_DATA32 = "data32";        // mTotalTime
+    public static final String KEY_ACCEL_DATA33 = "data33";        // mTotalTime
+    public static final String KEY_ACCEL_DATA34 = "data34";        // mTotalTime
+    public static final String KEY_ACCEL_DATA35 = "data35";        // mTotalTime
+    public static final String KEY_ACCEL_DATA36 = "data36";        // mTotalTime
+    public static final String KEY_ACCEL_DATA37 = "data37";        // mTotalTime
+
+
     public static final String KEY_ACCEL_ARG0 = "arg0";        // int		// count of walk
     public static final String KEY_ACCEL_ARG1 = "arg1";        // int 		// calorie
     public static final String KEY_ACCEL_ARG2 = "arg2";        // string
     public static final String KEY_ACCEL_ARG3 = "arg3";        // string
+    // Table 에 따라 기록되는 순서로 '추정'되는 int값을 조정해 준다
     public static final int INDEX_ACCEL_ID = 0;
-    public static final int INDEX_ACCEL_TYPE = 1;
-    public static final int INDEX_ACCEL_TIME = 2;
-    public static final int INDEX_ACCEL_YEAR = 3;
-    public static final int INDEX_ACCEL_MONTH = 4;
-    public static final int INDEX_ACCEL_DAY = 5;
-    public static final int INDEX_ACCEL_HOUR = 6;
-    public static final int INDEX_ACCEL_MINUTE = 7;
-    public static final int INDEX_ACCEL_SECOND = 8;
-    public static final int INDEX_ACCEL_DATA1 = 9;
-    public static final int INDEX_ACCEL_DATA2 = 10;
-    public static final int INDEX_ACCEL_DATA3 = 11;
-    public static final int INDEX_ACCEL_DATA4 = 12;
-    public static final int INDEX_ACCEL_DATA5 = 13;
-    public static final int INDEX_ACCEL_ARG0 = 14;
-    public static final int INDEX_ACCEL_ARG1 = 15;
-    public static final int INDEX_ACCEL_ARG2 = 16;
-    public static final int INDEX_ACCEL_ARG3 = 17;
+    //    public static final int INDEX_ACCEL_TYPE = 1;
+    public static final int INDEX_ACCEL_TIME = 1;
+    //    public static final int INDEX_ACCEL_YEAR = 3;
+//    public static final int INDEX_ACCEL_MONTH = 4;
+//    public static final int INDEX_ACCEL_DAY = 5;
+//    public static final int INDEX_ACCEL_HOUR = 6;
+//    public static final int INDEX_ACCEL_MINUTE = 7;
+//    public static final int INDEX_ACCEL_SECOND = 8;
+    public static final int INDEX_ACCEL_DATA1 = 2;
+    public static final int INDEX_ACCEL_DATA2 = 3;
+    public static final int INDEX_ACCEL_DATA3 = 4;
+    //    public static final int INDEX_ACCEL_DATA4 = 12;
+//    public static final int INDEX_ACCEL_DATA5 = 13;
+//    public static final int INDEX_ACCEL_ARG0 = 14;
+//    public static final int INDEX_ACCEL_ARG1 = 15;
+//    public static final int INDEX_ACCEL_ARG2 = 16;
+//    public static final int INDEX_ACCEL_ARG3 = 17;
     private static final String TAG = "DBHelper";
     private static final int DATABASE_VERSION = 1;
+    // DB Table을 입맛에 맞게 변경
     private static final String DATABASE_CREATE_ACCEL_TABLE = "CREATE TABLE " + TABLE_NAME_ACCEL_REPORT + "("
             + KEY_ACCEL_ID + " Integer primary key autoincrement, "
-            + KEY_ACCEL_TYPE + " Integer not null, "
-            + KEY_ACCEL_TIME + " Integer not null, "
-            + KEY_ACCEL_YEAR + " Integer, "
-            + KEY_ACCEL_MONTH + " Integer, "
-            + KEY_ACCEL_DAY + " Integer, "
-            + KEY_ACCEL_HOUR + " Integer, "
-            + KEY_ACCEL_MINUTE + " Integer, "
-            + KEY_ACCEL_SECOND + " integer, "
+//            + KEY_ACCEL_TYPE + " Integer not null, "
+            + KEY_ACCEL_TIME + " Text, "
+//            + KEY_ACCEL_YEAR + " Integer, "
+//            + KEY_ACCEL_MONTH + " Integer, "
+//            + KEY_ACCEL_DAY + " Integer, "
+//            + KEY_ACCEL_HOUR + " Integer, "
+//            + KEY_ACCEL_MINUTE + " Integer, "
+//            + KEY_ACCEL_SECOND + " integer, "
             + KEY_ACCEL_DATA1 + " integer, "
             + KEY_ACCEL_DATA2 + " integer, "
             + KEY_ACCEL_DATA3 + " integer, "
             + KEY_ACCEL_DATA4 + " integer, "
             + KEY_ACCEL_DATA5 + " integer, "
-            + KEY_ACCEL_ARG0 + " integer, "
-            + KEY_ACCEL_ARG1 + " integer, "
-            + KEY_ACCEL_ARG2 + " Text, "
-            + KEY_ACCEL_ARG3 + " Text"
+            + KEY_ACCEL_DATA6 + " integer, " + KEY_ACCEL_DATA7 + " integer, " + KEY_ACCEL_DATA8 + " integer, " + KEY_ACCEL_DATA9 + " integer, "
+            + KEY_ACCEL_DATA10 + " integer, " + KEY_ACCEL_DATA11 + " integer, " + KEY_ACCEL_DATA12 + " integer, " + KEY_ACCEL_DATA13 + " integer, "
+            + KEY_ACCEL_DATA14 + " integer, " + KEY_ACCEL_DATA15 + " integer, " + KEY_ACCEL_DATA16 + " integer, " + KEY_ACCEL_DATA17 + " integer, "
+            + KEY_ACCEL_DATA18 + " integer, " + KEY_ACCEL_DATA19 + " integer, " + KEY_ACCEL_DATA20 + " integer, " + KEY_ACCEL_DATA21 + " integer, "
+            + KEY_ACCEL_DATA22 + " integer, " + KEY_ACCEL_DATA23 + " integer, " + KEY_ACCEL_DATA24 + " integer, " + KEY_ACCEL_DATA25 + " integer, "
+            + KEY_ACCEL_DATA26 + " integer, " + KEY_ACCEL_DATA27 + " integer, " + KEY_ACCEL_DATA28 + " integer, " + KEY_ACCEL_DATA29 + " integer, "
+            + KEY_ACCEL_DATA30 + " integer, " + KEY_ACCEL_DATA31 + " integer, " + KEY_ACCEL_DATA32 + " integer, " + KEY_ACCEL_DATA33 + " integer, "
+            + KEY_ACCEL_DATA34 + " integer, " + KEY_ACCEL_DATA35 + " integer, " + KEY_ACCEL_DATA36 + " integer, " + KEY_ACCEL_DATA37 + " integer"
+
+//            + KEY_ACCEL_DATA4 + " integer, "
+//            + KEY_ACCEL_DATA5 + " integer, "
+//            + KEY_ACCEL_ARG0 + " integer, "
+//            + KEY_ACCEL_ARG1 + " integer, "
+//            + KEY_ACCEL_ARG2 + " Text, "
+//            + KEY_ACCEL_ARG3 + " Text"
             + ")";
     private static final String DATABASE_DROP_ACCEL_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME_ACCEL_REPORT;
     //----------- End of Accel data table parameters
@@ -104,7 +151,9 @@ public class DBHelper {
 
     // Constructor
     public DBHelper(Context context) {
+
         this.mContext = context;
+
     }
 
 
@@ -140,34 +189,76 @@ public class DBHelper {
     //----------------------------------------------------------------------------------
     // INSERT
     //----------------------------------------------------------------------------------
-    public long insertActivityReport(int type, long time, int year, int month, int day, int hour, int[] dataArray, String subData) throws SQLiteConstraintException {
-        if (time < 1 || dataArray == null || dataArray.length < 5)
-            return -1;
+    // day, month, year, hour, String subdata, int type 는 필요없어서 삭제
+    public long insertActivityReport(String time, String[] dataArray) throws SQLiteConstraintException {
+//        if (time < 1 || dataArray == null || dataArray.length < 5){
+//            return -1;
+//        }
+
 
         ContentValues insertValues = new ContentValues();
-        insertValues.put(KEY_ACCEL_TYPE, type);
+        //  insertValues.put(KEY_ACCEL_TYPE, type);
+        //  insertValues.put(KEY_ACCEL_TYPE, type);
 
         insertValues.put(KEY_ACCEL_TIME, time);
-        insertValues.put(KEY_ACCEL_YEAR, year);
-        insertValues.put(KEY_ACCEL_MONTH, month);
-        insertValues.put(KEY_ACCEL_DAY, day);
-        insertValues.put(KEY_ACCEL_HOUR, hour);
 
-        insertValues.put(KEY_ACCEL_DATA1, dataArray[0]);    // Sum of calorie
-        insertValues.put(KEY_ACCEL_DATA2, dataArray[1]);    // Sum of walk count
+        //insertValues.put(KEY_ACCEL_HOUR, hour);
+
+
+        insertValues.put(KEY_ACCEL_DATA1, dataArray[0]);
+        insertValues.put(KEY_ACCEL_DATA2, dataArray[1]);
         insertValues.put(KEY_ACCEL_DATA3, dataArray[2]);
         insertValues.put(KEY_ACCEL_DATA4, dataArray[3]);
         insertValues.put(KEY_ACCEL_DATA5, dataArray[4]);
-        insertValues.put(KEY_ACCEL_ARG0, 0);
-        insertValues.put(KEY_ACCEL_ARG1, 0);
-        insertValues.put(KEY_ACCEL_ARG2, subData);
+        insertValues.put(KEY_ACCEL_DATA6, dataArray[5]);
+        insertValues.put(KEY_ACCEL_DATA7, dataArray[6]);
+        insertValues.put(KEY_ACCEL_DATA8, dataArray[7]);
+        insertValues.put(KEY_ACCEL_DATA9, dataArray[8]);
+        insertValues.put(KEY_ACCEL_DATA10, dataArray[9]);
+        insertValues.put(KEY_ACCEL_DATA11, dataArray[10]);
+        insertValues.put(KEY_ACCEL_DATA12, dataArray[11]);
+        insertValues.put(KEY_ACCEL_DATA13, dataArray[12]);
+        insertValues.put(KEY_ACCEL_DATA14, dataArray[13]);
+        insertValues.put(KEY_ACCEL_DATA15, dataArray[14]);
+        insertValues.put(KEY_ACCEL_DATA16, dataArray[15]);
+        insertValues.put(KEY_ACCEL_DATA17, dataArray[16]);
+        insertValues.put(KEY_ACCEL_DATA18, dataArray[17]);
+        insertValues.put(KEY_ACCEL_DATA19, dataArray[18]);
+        insertValues.put(KEY_ACCEL_DATA20, dataArray[19]);
+        insertValues.put(KEY_ACCEL_DATA21, dataArray[20]);
+        insertValues.put(KEY_ACCEL_DATA22, dataArray[21]);
+        insertValues.put(KEY_ACCEL_DATA23, dataArray[22]);
+        insertValues.put(KEY_ACCEL_DATA24, dataArray[23]);
+        insertValues.put(KEY_ACCEL_DATA25, dataArray[24]);
+        insertValues.put(KEY_ACCEL_DATA26, dataArray[25]);
+        insertValues.put(KEY_ACCEL_DATA27, dataArray[26]);
+        insertValues.put(KEY_ACCEL_DATA28, dataArray[27]);
+        insertValues.put(KEY_ACCEL_DATA29, dataArray[28]);
+        insertValues.put(KEY_ACCEL_DATA30, dataArray[29]);
+        insertValues.put(KEY_ACCEL_DATA31, dataArray[30]);
+        insertValues.put(KEY_ACCEL_DATA32, dataArray[31]);
+        insertValues.put(KEY_ACCEL_DATA33, dataArray[32]);
+        insertValues.put(KEY_ACCEL_DATA34, dataArray[33]);
+        insertValues.put(KEY_ACCEL_DATA35, dataArray[34]);
+        insertValues.put(KEY_ACCEL_DATA36, dataArray[35]);
+        insertValues.put(KEY_ACCEL_DATA37, dataArray[36]);
 
-        Logs.d(TAG, "+ Insert activity report : mStartTime=" + time + ", Year=" + year + ", Month=" + month + ", Day=" + day + ", Hour=" + hour);
+
+        //   insertValues.put(KEY_ACCEL_DATA1, dataArray[0]);
+        //   insertValues.put(KEY_ACCEL_DATA2, dataArray[1]);
+        //   insertValues.put(KEY_ACCEL_DATA3, dataArray[2]);
+        // insertValues.put(KEY_ACCEL_ARG0, 0);
+        // insertValues.put(KEY_ACCEL_ARG1, 0);
+        // insertValues.put(KEY_ACCEL_ARG2, subData);
+
+
 
         synchronized (mDb) {
-            if (mDb == null)
+            if (mDb == null) {
+
                 return -1;
-            return mDb.insertOrThrow(TABLE_NAME_ACCEL_REPORT, null, insertValues);
+            }
+            return mDb.insertOrThrow(TABLE_NAME_ACCEL_REPORT, null, insertValues);      // 실질적으로 insert 하는 부분
         }
     }
 
@@ -380,7 +471,7 @@ public class DBHelper {
     private static class DatabaseHelper extends SQLiteOpenHelper {
         // Constructor
         public DatabaseHelper(Context context) {
-            super(context, DATABASE_NAME, null, DATABASE_VERSION);
+            super(context, "/mnt/sdcard/" + "BrainDB.db", null, DATABASE_VERSION);
         }
 
         // Will be called one time at first access

@@ -52,8 +52,9 @@ public class ExampleFragment extends Fragment {
     private IFragmentListener mFragmentListener = null;
     private Handler mActivityHandler = null;
 
-    //public static Button
 
+    // FragmentëŠ” default ìƒì„±ìë¥¼ ê¶Œì¥
+    // í˜¹ì—¬ ìƒì„±ìì— parameterë¥¼ ì‚¬ìš©í•˜ê³  ì‹¶ë‹¤ë©´ defaultë¥¼ í•˜ë‚˜ ë§Œë“¤ì–´ ë†“ì•„ë„ ì‘ë™í•  ë“¯
 //	public ExampleFragment(Context c, IFragmentListener l, Handler h) {
 //		mContext = c;
 //		mFragmentListener = l;
@@ -66,7 +67,7 @@ public class ExampleFragment extends Fragment {
 
         mContext = getContext();
 
-        Log.d("Â¥ÀÜ", "»ı¼º");
+
         mDataset = new XYMultipleSeriesDataset();
         mRenderer = new XYMultipleSeriesRenderer();
 
@@ -90,17 +91,17 @@ public class ExampleFragment extends Fragment {
         mCurrentRenderer.setColor(Color.parseColor("#ff7466"));
 
 
-        mRenderer.setApplyBackgroundColor(true);//¹è°æ»ö »ç¿ë ¿©ºÎ
-        mRenderer.setBackgroundColor(Color.TRANSPARENT);//¹è°æ»ö ¼³Á¤
-        mRenderer.setAxisTitleTextSize(30);//Ãà ±Û¾¾ Å©±â
-//		 mRenderer.setChartTitleTextSize(20);//Â÷Æ® Á¦¸ñ ±Û¾¾ Å©±â
-        mRenderer.setLabelsTextSize(30);//¶óº§ ±Û¾¾ Å©±â
+        mRenderer.setApplyBackgroundColor(true);
+        mRenderer.setBackgroundColor(Color.TRANSPARENT);
+        mRenderer.setAxisTitleTextSize(30);
+//		 mRenderer.setChartTitleTextSize(20);
+        mRenderer.setLabelsTextSize(30);
 
-        //mRenderer.setLegendTextSize(40);//ÇÏ´Ü ±×·¡ÇÁ ÀÌ¸§ ±Û¾¾ Å©±â
-        mRenderer.setMargins(new int[]{80, 30, 30, 30});//À§¾Æ·¡ ¿©¹é
-        //	 mRenderer.setZoomButtonsVisible(false);//ÁÜ ¹öÆ° Ç¥½Ã ¿©ºÎ
+        //mRenderer.setLegendTextSize(40);
+        mRenderer.setMargins(new int[]{80, 30, 30, 30});
+        //	 mRenderer.setZoomButtonsVisible(false);
 
-        mRenderer.setPointSize(1);//±×·¡ÇÁ Æ÷ÀÎÆ® Å©±â
+        mRenderer.setPointSize(1);
 
         // if (mChartView == null) {
         RelativeLayout layout = (RelativeLayout) rootView.findViewById(R.id.waveLayout);
@@ -116,14 +117,14 @@ public class ExampleFragment extends Fragment {
         //     mRenderer.setFitLegend(true);
         //mRenderer.setLegendHeight(400);
         mRenderer.setMarginsColor(color.white);
-        mRenderer.setYAxisMax(1100);//YÃà ÃÖ´ë°ª
-        mRenderer.setYAxisMin(500);//YÃà ÃÖ¼Ò°ª
-        mRenderer.setXAxisMin(0);//XÃà ÃÖ¼Ò°ª
-        mRenderer.setXAxisMax(MainActivity.Scale);//XÃà ÃÖ´ë°ª
+        mRenderer.setYAxisMax(2200);
+        mRenderer.setYAxisMin(1000);
+        mRenderer.setXAxisMin(0);
+        mRenderer.setXAxisMax(MainActivity.Scale);
         mRenderer.setZoomEnabled(false, false);
-        //     mRenderer.setExternalZoomEnabled(false);//È®´ë ¹æÁö
+        //     mRenderer.setExternalZoomEnabled(false);
         //mRenderer.setZoomLimits(new double[]{10,10,0,0});
-        mRenderer.setPanEnabled(false);//±×·¡ÇÁ ºä ÀÌµ¿ ¹æÁö
+        mRenderer.setPanEnabled(false);
         //mRenderer.setPanLimits(new double[] {10,10,10,10});
         mRenderer.setShowGrid(false);
 

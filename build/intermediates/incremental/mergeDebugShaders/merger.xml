@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build-types\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build-types\debug\shaders"/></dataSet></merger>

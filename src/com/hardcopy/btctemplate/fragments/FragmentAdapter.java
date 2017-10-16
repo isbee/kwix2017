@@ -50,6 +50,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     private Handler mHandler = null;
     private IFragmentListener mFragmentListener = null;
 
+    // ??? ?? ??? fragment? ????(??? ??) ????? ???? ??
     private Fragment mExampleFragment = null;
     private Fragment mLLSettingsFragment = null;
     private Fragment mFFTfragment = null;
@@ -70,7 +71,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
 
         if (position == FRAGMENT_POS_WAVE) {
             if (mExampleFragment == null) {
-                //mExampleFragment = new ExampleFragment(mContext, mFragmentListener, mHandler);
+                //mExampleFragment = new ExampleFragment(mContext, mFragmentListener, mHandler);    // default ???? ?? ?? ??
                 mExampleFragment = new ExampleFragment();
                 //needToSetArguments = true;
             }

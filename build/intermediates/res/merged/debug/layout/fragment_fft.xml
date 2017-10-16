@@ -1,9 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/waveLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-     >
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/chartBackground"
@@ -12,7 +10,7 @@
 
         android:layout_alignParentRight="true"
 
-        android:background="@drawable/back_region3" />
+        android:background="@drawable/back_final6" />
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/bar_chart2"
@@ -20,9 +18,7 @@
         android:layout_height="match_parent"
 
 
-        android:layout_marginBottom="20dp"
-         >
-    </com.github.mikephil.charting.charts.BarChart>
+        android:layout_marginBottom="20dp"></com.github.mikephil.charting.charts.BarChart>
 
     <TextView
         android:id="@+id/Hz"

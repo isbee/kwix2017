@@ -44,7 +44,7 @@ public class BTCTemplateService extends Service {
     private static final String TAG = "LLService";
     private static Handler mActivityHandler = null;
     private final IBinder mBinder = new ServiceBinder();
-    public BluetoothManager mBtManager = null;    // public À¸·Î º¯°æ»çÇ× ÀÖÀ½
+    public BluetoothManager mBtManager = null;
     // Context, System
     private Context mContext = null;
     private ServiceHandler mServiceHandler = new ServiceHandler();
@@ -77,7 +77,7 @@ public class BTCTemplateService extends Service {
 
         // If service returns START_STICKY, android restarts service automatically after forced close.
         // At this time, onStartCommand() method in service must handle null intent.
-        return Service.START_NOT_STICKY;    // NOT STICKY ·Î º¯°æÇÔ
+        return Service.START_NOT_STICKY;    // NOT STICKY ë¡œ ë³€ê²½í•¨
     }
 
     @Override
@@ -345,6 +345,7 @@ public class BTCTemplateService extends Service {
                             break;
 
                         case BluetoothManager.STATE_CONNECTED:
+                            // ë¸”ë£¨íˆ¬ìŠ¤ ì‹œì‘ì„ ìœ„í•´ ì•„ë‘ì´ë…¸ë¡œ ë¬¸ì ì „ì†¡
                             String sendingMessage = new String();
                             sendingMessage = "a";
                             //sendMessage(sendingMessage);
@@ -362,7 +363,7 @@ public class BTCTemplateService extends Service {
 
                 // Received packets from remote
                 case BluetoothManager.MESSAGE_READ:
-                    Logs.d(TAG, "Service - MESSAGE_READ: ");
+                    //Logs.d(TAG, "Service - MESSAGE_READ: ");
 
                     byte[] readBuf = (byte[]) msg.obj;
                     int readCount = msg.arg1;
@@ -372,7 +373,7 @@ public class BTCTemplateService extends Service {
                         //mTransactionReceiver.setByteArray(readBuf, readCount);
                         //Object obj = mTransactionReceiver.getObject();
 
-                        // Ãß°¡ÇÑ ºÎºĞ
+                        // ë©”ì¸ í•¸ë“¤ëŸ¬ì— MESSAGE_BT_READ íƒœê·¸ë¥¼ ë‹¬ì•„ dataë¥¼ ì „ì†¡
                         mActivityHandler.obtainMessage(Constants.MESSAGE_BT_READ, readCount, -1, readBuf).sendToTarget();
                     }
                     break;

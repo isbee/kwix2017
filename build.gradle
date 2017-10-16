@@ -34,6 +34,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_7
     }
     compileOptions.encoding = 'windows-1251'
+    compileOptions.encoding = 'UTF-8'
 
     sourceSets {
         main {

@@ -38,7 +38,8 @@ public class LLSettingsFragment extends Fragment {
     private CheckBox mCheckBackground;
     private EditText mEditWeight;
 
-
+    // Fragment? default ???? ??
+    // ?? ???? parameter? ???? ??? default? ?? ??? ??? ??? ?
 //	public LLSettingsFragment(Context c, IFragmentListener l) {
 //		mContext = c;
 //		mFragmentListener = l;

@@ -11,8 +11,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.components.LimitLine;
-import com.github.mikephil.charting.components.LimitLine.LimitLabelPosition;
 import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -39,7 +37,8 @@ public class FFTfragment extends Fragment {
     private IFragmentListener mFragmentListener = null;
     private Handler mActivityHandler = null;
 
-
+    // Fragment는 default 생성자를 권장
+    // 혹여 생성자에 parameter를 사용하고 싶다면 default를 하나 만들어 놓아도 작동할 듯
 //	public FFTfragment(Context c, IFragmentListener l) {
 //		mContext = c;
 //		mFragmentListener = l;
@@ -59,45 +58,16 @@ public class FFTfragment extends Fragment {
         //	FFTchart.setMarkerView(mv);
         FFTchart.setMarker(mv);
 
-        //ArrayList<BarEntry> BarEntry2 = new ArrayList<>();
-        /*
-		BarEntry.add(new BarEntry(0, 10f));
-		BarEntry.add(new BarEntry(1, 1f));
-		BarEntry.add(new BarEntry(2, 2f));
-		BarEntry.add(new BarEntry(3, 7f));
-		BarEntry.add(new BarEntry(4, 6f));
-		BarEntry.add(new BarEntry(5, 8f));
-		
-		BardataSet = new BarDataSet(BarEntry, "Roading...");
-		
-		ArrayList<String> labels2 = new ArrayList<>();
-		
-		labels2.add("January");
-		labels2.add("February");
-		labels2.add("March");
-		labels2.add("April");
-		labels2.add("May");
-		labels2.add("June");
-		
-		ArrayList<String> labels = new ArrayList<>();
-		
-		labels.add(10, "5");
-		labels.add(20, "10");
-		labels.add(30, "15");
-		labels.add(40, "20");
-		labels.add(50, "25");
-		labels.add(60, "30"); 
-		
-		BardataSet.setColors(ColorTemplate.COLORFUL_COLORS);   */
 
-        //data = new BarData(BardataSet);	// �������� ���� �Ǳ� ������ �׷����� �׸��� �ʱ�� ��
+        //data = new BarData(BardataSet);	// 블루투스 연결 되기 전에는 그래프를 그리지 않기로 함
         data = new BarData();
         data.setDrawValues(false);
         FFTchart.setData(data);
 //		FFTchart.setDrawValueAboveBar(false);
 //		FFTchart.setBackgroundResource(drawable.chart_background2);
 
-        LimitLine setaline = new LimitLine(14, "Theta-wave");
+        // 원래 뇌파를 구분할 때 limitline을 사용했었다
+       /* LimitLine setaline = new LimitLine(14, "Theta-wave");
         LimitLine alphaline = new LimitLine(26, "\nAlpha-wave");
         LimitLine betaline = new LimitLine(54, "Beta-wave");
 
@@ -116,14 +86,16 @@ public class FFTfragment extends Fragment {
         alphaline.setLineWidth(2.5f);
 
 
-//		FFTchart.getXAxis().addLimitLine(setaline);
-//		FFTchart.getXAxis().addLimitLine(betaline);
-//		FFTchart.getXAxis().addLimitLine(alphaline);
-//		FFTchart.getXAxis().setDrawLimitLinesBehindData(true);
+		FFTchart.getXAxis().addLimitLine(setaline);
+		FFTchart.getXAxis().addLimitLine(betaline);
+		FFTchart.getXAxis().addLimitLine(alphaline);
+		FFTchart.getXAxis().setDrawLimitLinesBehindData(true);*/
+
         FFTchart.setDescription(null);
         FFTchart.getLegend().setTextSize(14.0f);
         FFTchart.getAxisLeft().setDrawLabels(false);
         FFTchart.getAxisRight().setDrawLabels(false);
+        FFTchart.getAxisLeft().setAxisMaximum(80.0f);
 
         FFTchart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
 
@@ -131,148 +103,18 @@ public class FFTfragment extends Fragment {
         FFTchart.setScaleEnabled(false);
         //	FFTchart.setPinchZoom(false);
 
-        //FFTchart.getXAxis()
-		/*
-		FFTchart.getXAxis().setValueFormatter(new IAxisValueFormatter() {
-			
-			@Override
-			public String getFormattedValue(float arg0, AxisBase arg1) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-		}); */
 
 
         FFTchart.getXAxis().setDrawAxisLine(false);
         FFTchart.getAxisLeft().setDrawAxisLine(false);
         FFTchart.getAxisRight().setDrawAxisLine(false);
-		
-		/*
-		FFTchart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
-		    @Override
-		    public void onValueSelected(Entry e, Highlight h) {
-		        FFTchart.getXAxis().getValueFormatter().getFormattedValue(e.getX(), FFTchart.getXAxis());
-		       // FFTchart.highlightValue(h);
-		    }
-
-		    @Override
-		    public void onNothingSelected() {
-
-		    }
-
-		}); */        //OnChart~ ����
-		
-		/*
-		FFTchart.setOnChartGestureListener(new OnChartGestureListener() {
-			
-			@Override
-			public void onChartTranslate(MotionEvent arg0, float arg1, float arg2) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onChartSingleTapped(MotionEvent arg0) {
-				// TODO Auto-generated method stub
-				float tappedX = arg0.getX();
-			    float tappedY = arg0.getY();
-			    Toast toast = Toast.makeText(mContext, ""+, duration)
-			}
-			
-			@Override
-			public void onChartScale(MotionEvent arg0, float arg1, float arg2) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onChartLongPressed(MotionEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onChartGestureStart(MotionEvent arg0, ChartGesture arg1) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onChartGestureEnd(MotionEvent arg0, ChartGesture arg1) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onChartFling(MotionEvent arg0, MotionEvent arg1, float arg2, float arg3) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onChartDoubleTapped(MotionEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-		}); */
-
-
-        //	FFTchart.animateXY(500, 500);
-		
-		
-		
-		
-		
-		
-		
-		
-		/*
-		FFTchart = (LineChart) rootView.findViewById(R.id.FFFchart);
-		//FFTchart.setOnChartValueSelectedListener((OnChartValueSelectedListener) this);
-		
-		
-		//FFTchart.buildLayer();
-		//FFTchart.setVisibleXRangeMaximum(100);
-		
-		
-		//XAxis xl = FFTchart.getXAxis();
-		//xl.setAxisMaxValue(100f);
-		//xl.setAvoidFirstLastClipping(true);
-		
-		//YAxis leftAxis = FFTchart.getAxisLeft();
-		//leftAxis.setAxisMaxValue(1000f);
-        //leftAxis.setAxisMinValue(0f);
-        
-        ArrayList<Entry> LineEntry2 = new ArrayList<>();
-		
-        for(int e=0; e<100; e++){
-        	LineEntry2.add(new Entry(e,(float) (Math.random() * 40) + 100f));
-    	}
-		
-		
-		LineDataSet dataSet2 = new LineDataSet(LineEntry2, "Projects");
-		
-		
-		
-		ArrayList<String> labels2 = new ArrayList<>();
-		for(int e=0; e<100; e++){
-        	labels2.add(String.valueOf(e));
-    	}
-			
-		
-		//dataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
-		
-		data = new LineData();
-		
-		
-		FFTchart.setData(data);
-		//FFTchart.animateXY(2000, 2000);   */
 
 
         return rootView;
     }
 
-
+    // 라이브러리에서 제공하는 MarkerView라는 것이 있다. 이것은 bar나 line, 혹은 어떤 value값등의 어떤 구성요소를 클릭했을 때(highlighted)
+    // 그곳의 위치를 받아와서 mark를 달아주는 것이다.
     public class FFTMarkerView extends MarkerView {
 
         private TextView tvContent;
@@ -292,7 +134,8 @@ public class FFTfragment extends Fragment {
         public void refreshContent(Entry e, Highlight highlight) {
 
             int intVal = (int) e.getX();
-            tvContent.setText(intVal / 2 + "Hz");
+            // 최대 64개의 fft data가 들어오며, 아두이노 code 변경이 딱히 없다면 현재 0~30hz 주파수 대역 이므로, 단순하게 /2 로 주파수를 나눴다
+            tvContent.setText((intVal + 8) / 2 + "Hz");
 
             // this will perform necessary layouting
             super.refreshContent(e, highlight);
@@ -303,6 +146,7 @@ public class FFTfragment extends Fragment {
 
             if (mOffset == null) {
                 // center the marker horizontally and vertically
+                // 그래프의 어느 위치에 plot 할지 수치를 통해 변경 가능하다
                 mOffset = new MPPointF(-(getWidth() / 2), -getHeight() * 0.8f);
             }
 

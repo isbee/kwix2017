@@ -500,29 +500,30 @@ public class BluetoothManager {
         public void run() {
             Log.i(TAG, "BEGIN mConnectedThread");
             int bytes;
-            
+
+            // data 수신의 흐름을 txt파일로 저장할 때 썼던 코드를 주석으로 남겼다. 뒷부분의 나머지 코드와 같이 쓰면 된다
             /*
             String sdPath = Environment.getExternalStorageDirectory().getAbsolutePath();
     	    sdPath += "/MyDir";
     	    File file = new File(sdPath);
     	    file.mkdirs();
     	    sdPath += "/InputData.txt";
-    	    
+
     	    file = new File(sdPath);
-    	    
+
     	    try {
     	       file.createNewFile();
-    	       
+
     	    } catch(IOException ie){
-    	       
-    	    } */
+
+    	    }*/
 
             // Keep listening to the InputStream while connected
             while (true) {
                 try {
                     //  Read from the InputStream
-                    //     byte[] buffer = new byte[128];		// ������
-                    //     Arrays.fill(buffer, (byte)0x00);
+                    //     byte[] buffer = new byte[128];		// BTCtemplate 기존 data 전송 방식 코드 이다. array를 일단 0x00으로 초기화 해주는게 눈에 띄어서
+                    //     Arrays.fill(buffer, (byte)0x00);     // 남겨놨다
                     //     bytes = mmInStream.read(buffer);
                     //	Send the obtained bytes to the main thread
                     //      mHandler.obtainMessage(MESSAGE_READ, bytes, -1, buffer)
@@ -563,11 +564,12 @@ public class BluetoothManager {
                         byte[] send = mes.getBytes();
                         if (r_message[i].length() == 6) {
                             mHandler.obtainMessage(MESSAGE_READ, r_message[i].length(), -1, send)
-                                    .sendToTarget();
+                                    .sendToTarget();    // 서비스 핸들러에 데이터 넘겨준다(서비스 핸들러 = mHandler)
                         }
 
-//                		if(MainActivity.sampleCount < MainActivity.FFTsampleNum){			// FFT ������ ����
-//                			double value = Double.parseDouble(mes);							// parseDouble�� �������� �ٲ�ߵ�
+                        // JTransform 관련 코드
+//                		if(MainActivity.sampleCount < MainActivity.FFTsampleNum){			// FFT 데이터 저장
+//                			double value = Double.parseDouble(mes);							// parseDouble이 문제여서 바꿔야됨
 //                			
 //                			if(MainActivity.sampleCount % 2 == 0)								
 //                				MainActivity.fftData[MainActivity.sampleCount] = value;

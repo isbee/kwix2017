@@ -3,48 +3,48 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.0.2"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.0_ff0cb111a38a389252503c224867a3d65a8a373f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\libs\achartengine-1.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.0.2"
-        sha1="ecaed45fedb875a0fa5304fff261071b7c531a16">
-        <dex dex="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\pre-dexed\debug\achartengine-1.2.0_1804b2a8d647991199289e1467bbf4ec19f1585b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\libs\MPAndroidChart-v3.0.1.jar"
+        jar="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\libs\MPAndroidChart-v3.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="21.0.2"
         sha1="369f9aa48a629b4e92557b37326f42dc3de796e4">
-        <dex dex="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.1_60ec75b4bdcb8713a59e62747b262c62d7a1d631.jar" />
+        <dex dex="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.1_3c5a8acae7b6d7f5b61efc4f4f6ff6bdfaaa089c.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\exploded-aar\com.xw.repo\bubbleseekbar\3.4-lite\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.0.2"
-        sha1="9ee6b98b4e3504a4fed6cc2ad3930cf685d5f9bd">
-        <dex dex="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\pre-dexed\debug\com.xw.repo-bubbleseekbar-3.4-lite_48293b66276d113c4df1c97e1a10c295def4c377.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jar="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="21.0.2"
         sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.2.1_bad59ce5c6d4af701a3f6d4e0253a85ffeff1c8c.jar" />
+        <dex dex="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.2.1_02b6859947676bf659f376dff40bf834e62051ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\exploded-aar\com.xw.repo\bubbleseekbar\3.4-lite\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="21.0.2"
+        sha1="9ee6b98b4e3504a4fed6cc2ad3930cf685d5f9bd">
+        <dex dex="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\pre-dexed\debug\com.xw.repo-bubbleseekbar-3.4-lite_b4db5aeb1b9cb8c1eafa27da2aeab39bd583e4bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="21.0.2"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\pre-dexed\debug\internal_impl-23.0.0_67e59a338d6a691b9f394cd5fcc6bc8325b3f001.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\libs\achartengine-1.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="21.0.2"
+        sha1="ecaed45fedb875a0fa5304fff261071b7c531a16">
+        <dex dex="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\pre-dexed\debug\achartengine-1.2.0_f9ad922ec99708255a92c93ea496c850fbf24e89.jar" />
     </item>
     <item
         is-multidex="false"
@@ -53,16 +53,16 @@
         optimize="true"
         revision="21.0.2"
         sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\pre-dexed\debug\support-annotations-23.0.0_35ffa7da2800a77d3e135adccf644d4a310ce261.jar" />
+        <dex dex="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\pre-dexed\debug\support-annotations-23.0.0_35ffa7da2800a77d3e135adccf644d4a310ce261.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jar="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="21.0.2"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="C:\Users\user\Downloads\BT-Connection-Template-master\BT-Connection-Template-master\BTCTemplate\build\intermediates\pre-dexed\debug\internal_impl-23.0.0_b8f479fe64f8f4759c3acd8f56e2e02388debd31.jar" />
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="C:\Users\user\Downloads\BTConnectionTemplateMaster\BTConnectionTemplateMaster\BTCTemplate\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.0_68bb835553cc2e5c631b89f7e1216263dfa67fc2.jar" />
     </item>
 
 </items>

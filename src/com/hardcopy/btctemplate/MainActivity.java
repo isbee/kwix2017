@@ -64,7 +64,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
+import com.hardcopy.btctemplate.contents.DBHelper;
 import com.hardcopy.btctemplate.fragments.DrowsinessFragment;
 import com.hardcopy.btctemplate.fragments.ExampleFragment;
 import com.hardcopy.btctemplate.fragments.FFTfragment;
@@ -79,6 +79,8 @@ import com.hardcopy.btctemplate.utils.RecycleUtils;
 import org.achartengine.model.XYSeries;
 
 import java.math.BigDecimal;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -92,6 +94,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     private static final String TAG = "RetroWatchActivity";
     public static ArrayList<Entry> FFTEntry = new ArrayList<>();
     public static List<Long> TimeData = new ArrayList<Long>();
+
 
     // Global
     public static LineData data;
@@ -115,11 +118,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     // Variable
     int x = 0;
 
-    //	public static XYMultipleSeriesDataset mDataset = new XYMultipleSeriesDataset();
-//	public static XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
-//	public static XYSeries mCurrentSeries;
-//	public static XYSeriesRenderer mCurrentRenderer;
-//	public static GraphicalView mChartView;
     int x2 = 0;
     int i = 0;
     double seta = 0;
@@ -129,6 +127,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     double sleepNum;
     int ii = 0;
     int sampling;
+    DBHelper db;
+
     AudioManager manager;
     Vibrator vibe;
     Uri notification;
@@ -150,22 +150,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     private Timer mRefreshTimer = null;
     private TextToSpeech myTTS;
 
-
-    // graph
-
-	
-	/*
-	BarChart chart;
-	ArrayList<BarEntry> BarEntry;
-	BarDataSet dataSet;
-	ArrayList<String> labels;
-	BarData data;    */
-
-    // ???? back??? ?????? ??????? ??? ??? ??????b ??????? ?????? onsaveinstance?? ???????!
-    /**
-     * Service connection
-     */
-    // bindService?? ???? ???
+    // bindservice를 위해서 구현된 serviceConnection
     private ServiceConnection mServiceConn = new ServiceConnection() {
 
         public void onServiceConnected(ComponentName className, IBinder binder) {
@@ -200,12 +185,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         setContentView(R.layout.activity_main);
 
-
-        //	 Window window = getWindow();
-        //   window.addFlags(WindowManager.LayoutParams.beFLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        //	 window.addFlags(WindowManager.LayoutParams.);
-        //    window.setTitleColor(Color.parseColor("#363b74"));
-
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
 
@@ -222,7 +201,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        mViewPager.setOffscreenPageLimit(3);    // ?? ???????? ????? ??????? ????
+        mViewPager.setOffscreenPageLimit(3);    // setOffscreenPageLimit() 을 사용해서 View를 처음부터 정해진 갯수 만큼 생성하면
+        // 더 이상의 destroy, create 는 발생하지 않는다. 그러므로 그래프의 유지가 가능한 것이다
 
 
         // When swiping between different sections, select the corresponding tab.
@@ -265,9 +245,12 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             }
         });
 
+        db = new DBHelper(mContext);
+        db.openWritable();  // 쓰기 모드
 
         // Do data initialization after service started and binded
         doStartService();
+
     }
 
     @Override
@@ -293,6 +276,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     @Override
     public void onDestroy() {
         super.onDestroy();
+        db.close();
         finalizeActivity();
     }
 
@@ -343,7 +327,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             public void onClick(DialogInterface dialog, int which) {
 
                 if (AppSettings.getBgService())
-                    doStopService();    // run in background ???? ???? ????
+                    doStopService();
                 else ;
 
                 finish();
@@ -351,17 +335,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 return;
             }
         });
-		/*
-		.setOnKeyListener(new DialogInterface.OnKeyListener() {
-
-			@Override
-			public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
-				// TODO Auto-generated method stub
-				if(keyCode == KeyEvent.KEYCODE_BACK)
-					dialog.dismiss();
-				return false;
-			}
-		}); */                    //setCancelable ?? ?????? ???????.
 
 
         AlertDialog CloseAlert = alert.create();
@@ -375,9 +348,58 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         super.onConfigurationChanged(newConfig);
     }
 
+    // log 뽑기 위한 함수 였으나 지금은 쓰지 않는다
+//    void PrintLog(String data1, String data2, String data3){
+//
+//        String sdPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+//
+//        sdPath += "/InputData.txt";
+//        //String sdPath = "/Download/InputData.txt";
+//        File file = new File(sdPath);
+//
+//        try {
+//            SimpleDateFormat sdfNow = new SimpleDateFormat("HH:mm:ss");
+//            String time = sdfNow.format(new Date(System.currentTimeMillis()));;
+//
+//            //FileOutputStream fos = new FileOutputStream(file);
+//            FileWriter fileOut = new FileWriter(sdPath, true);
+////            fos.write("@".getBytes());
+////            fos.write(time.getBytes());
+////            fos.write("@".getBytes());
+////            fos.write(data1.getBytes());
+////            fos.write("-".getBytes());
+////            fos.write(data2.getBytes());
+////            fos.write("-".getBytes());
+////            fos.write(data3.getBytes());
+////            fos.write("-".getBytes());
+////            fos.close();
+//            fileOut.write("@");
+//            fileOut.write(time);
+//            fileOut.write("@");
+//            fileOut.write(data1);
+//            fileOut.write("-");
+//            fileOut.write(data2);
+//            fileOut.write("-");
+//            fileOut.write(data3);
+//            fileOut.write("-");
+//            fileOut.close();
+//            //FileInputStream fis = new FileInputStream(file);
+//            //fis.read(buffer);
+//            //fis.close();
+//        } catch (FileNotFoundException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//    }
+
     /**
      * Implements TabListener
      */
+    // 탭 선택시 문자를 보내서 다른 파형을 보내도록 구성. 아두이노 에서 해당 문자에 따라 다른 파형 보내줌
+    // 선택된 탭은 tabSelected가 되고 이전에 선택했던 탭은 unSelected 되며, 동일 tab을 다시 누르면 reSelected
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         // When the given tab is selected, switch to the corresponding page in the ViewPager.
@@ -388,7 +410,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             sendingMessage = "a";
             //sendMessage(sendingMessage);
             byte[] send = new String(sendingMessage).getBytes();
-            mService.mBtManager.write(send);        // BTCtemplate.mBtManager?? private >>> public???? ????????
+            mService.mBtManager.write(send);
             //		mService.mBtManager.write(send);
             //		mService.mBtManager.write(send);
         } else if (tab.getPosition() == FragmentAdapter.FRAGMENT_FFT) {
@@ -412,7 +434,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             sendingMessage = "b";
             //sendMessage(sendingMessage);
             byte[] send = new String(sendingMessage).getBytes();
-            mService.mBtManager.write(send);        // BTCtemplate.mBtManager?? private >>> public???? ????????
+            mService.mBtManager.write(send);
             //		mService.mBtManager.write(send);
             //		mService.mBtManager.write(send);
         }
@@ -423,12 +445,13 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         Log.e("????", String.valueOf(tab.getPosition()));
 
 
+
         if (tab.getPosition() == FragmentAdapter.FRAGMENT_POS_WAVE) {
             String sendingMessage = new String();
             sendingMessage = "a";
             //sendMessage(sendingMessage);
             byte[] send = new String(sendingMessage).getBytes();
-            mService.mBtManager.write(send);        // BTCtemplate.mBtManager?? private >>> public???? ????????
+            mService.mBtManager.write(send);
             //	mService.mBtManager.write(send);
             //	mService.mBtManager.write(send);
         } else //(tab.getPosition() == FragmentAdapter.FRAGMENT_FFT)
@@ -449,6 +472,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      * Private methods
      ******************************************************/
 
+    // 설정의 run in background 체크시에 service monitoring을 통해 비정상적으로 service 종료시 재 실행
     @Override
     public void OnFragmentCallback(int msgType, int arg0, int arg1, String arg2, String arg3, Object arg4) {
         switch (msgType) {
@@ -467,7 +491,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      */
     private void doStartService() {
         Log.d(TAG, "# Activity - doStartService()");
-        //	startService(new Intent(this, BTCTemplateService.class));	//???? ????. Activity?? ?????? service?? ??????? ?????? ????? ??
+        //	startService(new Intent(this, BTCTemplateService.class));	// startService 쓸거면 stopService도 해주어야 함
         bindService(new Intent(this, BTCTemplateService.class), mServiceConn, Context.BIND_AUTO_CREATE);
     }
 
@@ -478,9 +502,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         Log.d(TAG, "# Activity - doStopService()");
 
 
-        unbindService(mServiceConn);    // Template???? ???? ???? ?鰲�?. ???? unbind?? ???? ??夷�??
-        // LogCat?? ????? leaked ???? ??? ?????? ?????.
-        // ???????? ????????? ??????? ??? ??? ???? ?姨�????
+        unbindService(mServiceConn);    // Template 원본을 보면 unbindService 가 없다. 원래는 해줘야 하는게 맞다
+
 
         mService.finalizeService();
 
@@ -551,6 +574,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     /**
      * Receives result from external activity
      */
+    // deviceListActivity 의 결과 관련 함수
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Logs.d(TAG, "onActivityResult " + resultCode);
 
@@ -580,22 +604,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         }    // End of switch(requestCode)
     }
 
-    private LineDataSet createSet() {
-
-        LineDataSet set = new LineDataSet(null, "Dynamic Data");
-        set.setAxisDependency(AxisDependency.LEFT);
-        set.setColor(ColorTemplate.getHoloBlue());
-        // set.setCircleColor(Color.WHITE);
-        set.setLineWidth(2f);
-        // set.setCircleRadius(4f);
-        //set.setFillAlpha(65);
-        set.setFillColor(ColorTemplate.getHoloBlue());
-        set.setHighLightColor(Color.rgb(244, 117, 117));
-        // set.setValueTextColor(Color.WHITE);
-        // set.setValueTextSize(9f);
-        //set.setDrawValues(false);
-        return set;
-    }
 
     /*****************************************************
      * Handler, Callback, Sub-classes
@@ -647,28 +655,18 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                     break;
 
                 case Constants.MESSAGE_BT_READ:
-                    // ??????!!!  ??? fragment ??? ???? ??? ??????
-                    // ???? ??????? dataSet???? ??????? ???? ????? ??姨�? ??? ?????
+                    // 여기서 블루투스로 수신한 데이터 처리를 한다
 
 
                     byte[] readBuf = (byte[]) msg.obj;
 
-                    //if(readBuf.length==5)
-                    //{
-
-                    //		try {
-                    //			Log.e(TAG,new String(readBuf, "UTF-8"));
-                    //		} catch (UnsupportedEncodingException e1) {
-                    // TODO Auto-generated catch block
-                    //			e1.printStackTrace();
-                    //		}
                     String readMessage = new String(readBuf, 0, msg.arg1);
                     //String[] r_message = readMessage.split("\r");
                     //String mes = r_message.toString();
                     //if(readMessage.startsWith("a") )
                     //{
 
-                    if (mViewPager.getCurrentItem() == FragmentAdapter.FRAGMENT_POS_WAVE) // Wave ???? ???
+                    if (mViewPager.getCurrentItem() == FragmentAdapter.FRAGMENT_POS_WAVE) // Wave 탭을 선택할 경우
                     {
                         double y;
 
@@ -682,39 +680,20 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
                         Log.e("???泥�?", String.valueOf(sampling++));
 
-                        if (y > 400)    // FFT ??????? ??? ????? ?????
+                        if (y > 400)   // FFT data와의 구별을 위해서 값을 구분 했었다. 따라서 일정 수치 이상의 값만 plot해서 FFT 그래프가 wave에서 출력되는 일 방지
                         {
-                            //if(ExampleFragment.mCurrentSeries != null)
-                            //	{
+
                             ExampleFragment.mCurrentSeries.add(x, y);
-                            //	}
-                            ExampleFragment.mChartView.repaint();//????? ???
+                            ExampleFragment.mChartView.repaint();
                             x = x + 1;
 
-                        } else    // wave?? ????? ????? ?? ????? ??? ??????
-                        {
-	  		    		/*
-	  		    		String sendingMessage = new String();
-	  		            sendingMessage="a";
-	  		            //sendMessage(sendingMessage);
-	  		            byte[] send = new String(sendingMessage).getBytes();
-	  					mService.mBtManager.write(send);
-	  					//mService.mBtManager.write(send);
-	  					//mService.mBtManager.write(send);
-	  					Log.e("wave????", "????"); */
                         }
-                        //mCurrentSeries.add(x, y);	// ???? ???? view?? ????? ??? ??????? ???? ??????
-
 
                         if (x > Scale) {
-                            //mCurrentSeries.remove()
 
+                            ExampleFragment.mCurrentSeries.clear();
+                            ExampleFragment.mDataset.clear();
 
-                            ExampleFragment.mCurrentSeries.clear();//??? ???
-                            ExampleFragment.mDataset.clear();//??? ???
-
-                            //mCurrentSeries.clear();//??? ???
-                            //mDataset.clear();//??? ???
                             x = 0;
 
                             String seriesTitle = "";
@@ -722,26 +701,12 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                             XYSeries series = new XYSeries(seriesTitle);
                             ExampleFragment.mDataset.addSeries(series);
                             ExampleFragment.mCurrentSeries = series;
-                            // mDataset.addSeries(series);
-                            // mCurrentSeries = series;
-                            // create a new renderer for the new series
-                            //        XYSeriesRenderer renderer = new XYSeriesRenderer();
-                            //       	ExampleFragment.mRenderer.addSeriesRenderer(renderer);
-
-                            //  mRenderer.addSeriesRenderer(renderer);
-	  	                /*
-	  	                // set some renderer properties
-	  	                renderer.setPointStyle(PointStyle.CIRCLE);
-	  	                renderer.setFillPoints(true);
-	  	                renderer.setDisplayChartValues(true);
-	  	                renderer.setDisplayChartValuesDistance(1);
-	  	                mCurrentRenderer = renderer;
-	  	                //mChartView.repaint(); */
-                            //???? ????? ????? ??
 
                         }
                     } else {
                         float y2;
+
+                        // JTransform 관련 코드, 이후 사용할 거라면 수정해서  사용
 
 //	            	if(sampleCount == FFTsampleNum){
 //	            		DoubleFFT_1D fft = new DoubleFFT_1D(FFTsampleNum);
@@ -775,10 +740,10 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
 
                         //Log.e("dd", readMessage);
-                        if (readMessage.endsWith("c")) {
+                        if (readMessage.endsWith("c")) {    // 아두이노 에서 하나의 FFT data set을 보냈다면
 
                             if (BarEntry.isEmpty() == false) {
-                                if (BarEntry.size() < 90)    // FFT ????? ????? ?? ???? ??? ????
+                                if (BarEntry.size() < 90)    // data 갯수는 어차피 64+1 개가 최대다
                                 {
                                     BarDataSet BardataSet = new BarDataSet(BarEntry, "Frequency(Hz)");
                                     BardataSet.setDrawValues(false);
@@ -800,34 +765,53 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                                     float seta = 0, alpha = 0, beta = 0;
                                     float sav, aav, bav, result;
 
-                                    for (int i = 7; i < 17; i++)    // seta?? ????
+                                    // theta파, alpha파, beta파를 index로 구별
+                                    for (int i = 3; i < 12; i++)            // 7~17
                                         seta += BarEntry.get(i).getY();
 
-                                    for (int i = 17; i < 28; i++)
+                                    for (int i = 12; i < 20; i++)           // 17~28
                                         alpha += BarEntry.get(i).getY();
 
-                                    for (int i = 28; i < BarEntry.size(); i++)
+                                    for (int i = 20; i < 37; i++)  // 28~ barEntry.size()
                                         beta += BarEntry.get(i).getY();
 
-                                    sav = seta / 10.0f;
-                                    aav = alpha / 11.0f;
-                                    bav = beta / (float) BarEntry.size();
+                                    sav = seta / 9.0f;
+                                    aav = alpha / 8.0f;
+                                    bav = beta / 17.0f;
 
                                     String tmp1 = Float.toString(sav);
                                     String tmp2 = Float.toString(aav);
                                     String tmp3 = Float.toString(bav);
 
+                                    String brainData[] = new String[37];
+                                    for (int i = 0; i < 37; i++) {
+                                        brainData[i] = Float.toString(BarEntry.get(i).getY());
+                                    }
+
+
+                                    Log.e("세타파, 알파파, 베타파", "" + tmp1 + "  " + tmp2 + "  " + tmp3);
+                                    long now = System.currentTimeMillis();
+                                    Date date = new Date(now);
+                                    SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.US);
+                                    String strNow = sdfNow.format(date);
+
+                                    db.insertActivityReport(strNow, brainData);
+
+
+                                    // 오차 없는 계산을 위함
                                     BigDecimal bd1 = new BigDecimal(tmp1);
                                     BigDecimal bd2 = new BigDecimal(tmp2);
                                     BigDecimal bd3 = new BigDecimal(tmp3);
 
-                                    //	BigDecimal add = bd1.add(bd2);
-                                    //	BigDecimal sleepNum = add.divide(bd3, 4, BigDecimal.ROUND_UP);
+                                    BigDecimal sumWave = bd1.add(bd2);
+                                    BigDecimal sleepNum = sumWave.divide(bd3, 4, BigDecimal.ROUND_UP);
 
-                                    BigDecimal multiple = bd2.multiply(bd3);
-                                    BigDecimal sleepNum = bd1.divide(multiple, 4, BigDecimal.ROUND_UP);
+//                                    BigDecimal multiple = bd2.multiply(bd3);
+//                                    BigDecimal sleepNum = bd1.divide(multiple, 4, BigDecimal.ROUND_UP);
+//                                    BigDecimal sumWave = bd1.add(bd2.add(bd3));
+//                                    sleepNum = sleepNum.multiply(sumWave);
 
-                                    float coefficient = 3.0f;
+                                    float coefficient = 1.0f;
                                     String coef = Float.toString(coefficient);
                                     BigDecimal cf = new BigDecimal(coef);
                                     sleepNum = sleepNum.multiply(cf);
@@ -844,14 +828,15 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                                         //dataSet.addEntry(new Entry(set.getEntryCount(),y));
 
 
-                                        long now = System.currentTimeMillis();
-                                        TimeData.add(set.getEntryCount() - 1, now);
+                                        now = System.currentTimeMillis();
+                                        TimeData.add(set.getEntryCount() - 1, now);     // 졸음지수 그래프 x축을 변경하기 위한 시간 data 저장
 
 
                                         axisTime = (int) (TimeData.get(set.getEntryCount() - 1) - TimeData.get(0)) / 1000;
 
-                                        // sec ??? ??????
-                                        if (axisTime >= min - 1 && axisTime <= min + 1)    // index 1???? 2?? ???? ??????
+                                        // x축 scale을 sec, min , hour로 변경 가능 하려던 코드
+                                        // 이후에 버튼을 누르던지 등등의 특정 액션으로 type을 결정해 주면 된다
+                                        if (axisTime >= min - 1 && axisTime <= min + 1)    // index 가 증가하는 타이밍에 따라 59~61 초 정도로 나뉨
                                         {
                                             DrowsinessFragment.DrowsinessChart.getXAxis().setGranularity(set.getEntryCount() - 1);
                                             secType = false;
@@ -859,7 +844,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                                             hourType = false;
                                         }
 
-
+                                        // valueFormatter는 chart에서 지원해 주는 interface이고  이것을 통해 x축 표시값을 변경 가능
                                         DrowsinessFragment.DrowsinessChart.getXAxis().setValueFormatter(new IAxisValueFormatter() {
 
                                             @Override
@@ -891,7 +876,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                                         // let the chart know it's data has changed
                                         DrowsinessFragment.DrowsinessChart.notifyDataSetChanged();
 
-                                        // limit the number of visible entries
+
+                                        // 10개 이상의 data가 들어오면 그래프 이동 시작
                                         if (set.getEntryCount() < 10) {
                                             DrowsinessFragment.DrowsinessChart.setVisibleXRangeMaximum(10);
                                             DrowsinessFragment.DrowsinessChart.setVisibleXRangeMinimum(10);
@@ -910,20 +896,17 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                                         DrowsinessFragment.DrowsinessChart.getXAxis().setPosition(XAxisPosition.BOTTOM);
 
                                         // mChart.setVisibleYRange(30, AxisDependency.LEFT);
-                                        Log.e("????", String.valueOf(DrowsinessFragment.DrowsinessChart.getVisibleXRange()));
-                                        // move to the latest entry
+                                        //Log.e("????", String.valueOf(DrowsinessFragment.DrowsinessChart.getVisibleXRange()));
+
+                                        // 그래프 이동
                                         if (DrowsinessFragment.DrowsinessChart.getVisibleXRange() < DrowsinessFragment.DrowsinessChart.getHighestVisibleX()) {
                                             DrowsinessFragment.DrowsinessChart.invalidate();
-                                            Log.e("ddddd", "Ddd");
+                                            //Log.e("ddddd", "Ddd");
                                         } else {
                                             DrowsinessFragment.DrowsinessChart.moveViewToX(data.getEntryCount() - (11 + ii));
-                                            Log.e("d", "Ddd");
+                                            //Log.e("d", "Ddd");
                                         }
-                                        //  if(DrowsinessFragment.DrowsinessChart.getLowestVisibleX()== 10+ii)
-                                        //          	DrowsinessFragment.DrowsinessChart.moveViewToX(data.getEntryCount()-(11+ii));
-                                        //           else
-                                        //           	DrowsinessFragment.DrowsinessChart.invalidate();
-                                        //            DrowsinessFragment.DrowsinessChart.animateX(100);
+
 
                                         DrowsinessFragment.text.setVisibility(View.VISIBLE);
                                         DrowsinessFragment.IndexText.setText(sleepNum.toString());
@@ -934,11 +917,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
                                         BigDecimal multiple100 = new BigDecimal("100");
                                         BigDecimal percent = getPercent.multiply(multiple100);
-
-
-                                        //       int percent = (getPercent.intValue()*100);
-                                        //       int percent = (int)((sleepNum.floatValue()/10.0f)*100);
-
 
                                         DrowVal.setText("Drowsiness: " + percent.intValue() + "%");
 
@@ -983,14 +961,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
                             }
 
-
-                            // if(BarEntry != null)
-                            //{
-
-                            //BarEntry.clear();
                             BarEntry = new ArrayList<>();
 
-                            //}
                             x2 = 0;
 
                         } else {
@@ -1004,34 +976,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
                                 return;
                             }
-                            //	float y2 =  Float.parseFloat(readMessage);	// FFT value
 
-
-                            // data2 = FFTfragment.FFTchart.getData();
-
-
-                            //    if (data2 != null) {
-
-                            // BarDataSet set = (BarDataSet) data2.getDataSetByIndex(0);
-                            // set.addEntry(...); // can be called as well
-
-                            //        if (set == null) {
-                            //            set = new BarDataSet(null, "Dynamic Data");		// ???? ????!! (?�뀭?? ?? code ???? ??????? ????? ?????? ??)
-                            //Log.e("dd", String.valueOf(y2));
-                            //            data2.addDataSet(set);
-
-                            //        }
-                            // BarDataSet set = (BarDataSet) data2.getDataSetByIndex(0);
-
-
-                            //  data2.addEntry(new Entry(set.getEntryCount(),y2), 0);
-                            //  FFTfragment.data = data2;
-                            //  FFTfragment.data.notifyDataChanged();
-                            //  FFTfragment.FFTchart.notifyDataSetChanged();
-                            //  FFTfragment.FFTchart.invalidate();
-                            //
-                            if (y2 > 500) {
-		        	   /*
+                            if (y2 > 500) {     // 일정 수치 이상이면 wave data라고 판정
+                       /*
 		        	   String sendingMessage = new String();
 	                    sendingMessage="b";
 	                    //sendMessage(sendingMessage);
@@ -1046,194 +993,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                                 x2++;
 
                             }
-
                         }
 
-
-                        //    }
                     }
-
-                    //mViewPager.getCurrentItem()
-                    //data2.addEntry(new Entry(x2, 10f), arg1);
-			/*
-	  		     mChartView = ExampleFragment.mChartView;
-	  		     mCurrentRenderer = ExampleFragment.mCurrentRenderer;
-	  		   mCurrentSeries = ExampleFragment.mCurrentSeries;
-	  		 mDataset = ExampleFragment.mDataset;
-	  		mRenderer = ExampleFragment.mRenderer;
-				 */
-
-
-				 /*
-				 byte[] readBuf = (byte[]) msg.obj;
-				 String readMessage = new String(readBuf, 0, msg.arg1);
-
-
-				 float y =  Float.parseFloat(readMessage);
-
-
-				 FFTEntry.add(new Entry(y,x));
-				 dataSet = new LineDataSet(FFTEntry, "project");
-
-				 ArrayList<String> labels = new ArrayList<>();
-				 for(int i=0; i<x+1; i++)
-				 {
-					 labels.add(String.valueOf(i));
-				 }
-
-				 data = new LineData(labels, dataSet);
-				 FFTfragment.data = data;
-				 FFTfragment.data.notifyDataChanged();
-				 FFTfragment.FFTchart.notifyDataSetChanged();
-				// FFTfragment.FFTchart.moveViewToX(data.getXValCount());
-				 FFTfragment.FFTchart.invalidate();
-
-         		 x++;
-         		 if(x>100)
-         		 {
-         			 x=0;
-         		 } */
-
-                    //Log.e("test", readMessage);
-
-
-				 /*
-				 data = FFTfragment.FFTchart.getData();
-
-
-
-			        if (data != null) {
-
-			            LineDataSet set = (LineDataSet) data.getDataSetByIndex(0);
-			            // set.addEntry(...); // can be called as well
-
-			            if (set == null) {
-			                set = createSet();
-			                data.addDataSet(set);
-			            }
-			            	//dataSet = (LineDataSet) data.getDataSets();
-			            	//Log.e("test", String.valueOf(data.getDataSetCount()));
-			            	//Log.e("test", String.valueOf(data.getMaxEntryCountSet()));
-
-				            if(x>99)
-				            {
-				            //	data.clearValues();
-
-
-
-				            	LineDataSet lastDataSet = (LineDataSet) data.getDataSetByIndex(data.getDataSetCount()-1);
-				            	Entry lastEntry = lastDataSet.getEntryForIndex(lastDataSet.getEntryCount()-1);
-				            	data.removeEntry(lastEntry, data.getDataSetCount()-1);
-				            	//Log.e("test", String.valueOf(lastDataSet.getEntryCount()));
-				            	//Log.e("test", String.valueOf(data.getDataSetCount()));
-
-
-				            	LineDataSet latestDataSet = (LineDataSet) data.getDataSets();
-				            	Entry newEntry = new Entry();
-
-				            	for(int i=0; i<100; i++)
-				            	{
-				            		//Entry FirstEntry = (Entry) latestDataSet.getEntriesForXValue(i);
-				            		Entry SecondEntry = (Entry) latestDataSet.getEntriesForXValue(i+1);
-
-				            		//FirstEntry = SecondEntry;
-				            		newEntry.
-
-				            	}
-
-
-				            	//LineDataSet FirstDataSet = (LineDataSet) data.getDataSetByIndex(i);
-				            	//Entry FirstEntry = FirstDataSet.getEntryForIndex(i);
-				            	//data.removeEntry(FirstEntry, i);
-
-				            	//dataSet.removeEntry(i);
-				            	//Log.e("test", String.valueOf(FirstDataSet.getEntryCount()));
-
-
-				            	//i++;
-
-
-
-				            	x--;
-				            	//x=0;
-				            }
-				            data.addEntry(new Entry(set.getEntryCount(),y), 0);
-				            //dataSet.addEntry(new Entry(set.getEntryCount(),y));
-
-
-				            x++;
-
-				            FFTfragment.data = data;
-				           // data.notifyDataChanged();
-				            //FFTfragment.data.notifyDataChanged();
-
-				            // let the chart know it's data has changed
-				            FFTfragment.FFTchart.notifyDataSetChanged();
-
-				            // limit the number of visible entries
-				            //FFTfragment.FFTchart.setVisibleXRangeMaximum(100);
-				            // mChart.setVisibleYRange(30, AxisDependency.LEFT);
-
-				            // move to the latest entry
-				            FFTfragment.FFTchart.moveViewToX(data.getEntryCount());
-
-				            // this automatically refreshes the chart (calls invalidate())
-				            // mChart.moveViewTo(data.getXValCount()-7, 55f,
-				            // AxisDependency.LEFT);
-
-				           // Log.e("test", String.valueOf(data.getDataSetCount()));
-
-				            // dataSet?? 1?? ???? ?????? ?????? ?????? ?? ??
-				            // ??????? ????????? ???????? ?�닞?????
-
-			        } */
-
-
-				 /*
-				 	ArrayList<Entry> LineEntry2 = new ArrayList<>();
-
-			        for(int e=0; e<100; e++){
-			        	LineEntry2.add(new Entry(e, (float) (Math.random() * 40) + 300f));
-			    	}
-
-
-					LineDataSet dataSet2 = new LineDataSet(LineEntry2, "Projects");
-
-					ArrayList<String> labels2 = new ArrayList<>();
-					for(int e=0; e<100; e++){
-			        	labels2.add(String.valueOf(e));
-			    	}
-
-
-					//dataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
-
-					data = new LineData(dataSet2);
-					//FFTfragment.data = data;
-					FFTfragment.FFTchart.notifyDataSetChanged();
-					//FFTfragment.FFTchart.invalidate(); */
-
-				/*
-				 data = FFTfragment.FFTchart.getData();
-				 dataSet = data.getDataSetByIndex(0);
-				 x = dataSet.getEntryCount();
-
-				 if(data.getXValCount()<=100){
-					 data.getXVals().add(""+x);
-					 data.getXVals().remove(0);
-
-					 for(int i=0; i<x; i++){
-						 Entry e = dataSet.getEntryForXIndex(i);
-						 if (e==null) continue;
-
-						 e.setXIndex(e.getXIndex() - 1);
-					 }
-					 x = 100;
-				 }
-				 data.addEntry(new Entry(y, x), 0);
-				 //FFTfragment.FFTchart.notifyDataSetChanged();
-				 //FFTfragment.FFTchart.invalidate();
-				 //FFTfragment.FFTchart.setData(data); */
-
 
                     break;
 

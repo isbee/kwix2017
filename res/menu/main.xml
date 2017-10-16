@@ -2,10 +2,12 @@
 
     <item
         android:id="@+id/action_scan"
+        android:enabled="true"
         android:icon="@android:drawable/ic_menu_view"
         android:orderInCategory="10"
-
-        android:title="@string/connect" />
+        android:showAsAction="always"
+        android:title="@string/connect"
+        android:visible="true" />
     <!-- android:showAsAction="always|withText" -->
 
     <item

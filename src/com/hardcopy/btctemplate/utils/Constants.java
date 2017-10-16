@@ -22,7 +22,7 @@ public class Constants {
     public static final int MESSAGE_BT_STATE_CONNECTED = 4;
     public static final int MESSAGE_BT_STATE_ERROR = 10;
 
-    public static final int MESSAGE_BT_READ = 5;  //Ãß°¡ÇÔ
+    public static final int MESSAGE_BT_READ = 5;  // ??? ??.
 
     public static final int MESSAGE_READ_ACCEL_DATA = 201;
     public static final int MESSAGE_READ_ACCEL_REPORT = 211;
