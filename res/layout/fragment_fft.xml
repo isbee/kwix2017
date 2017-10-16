@@ -10,7 +10,7 @@
 
         android:layout_alignParentRight="true"
 
-        android:background="@drawable/back_region3" />
+        android:background="@drawable/back_final6" />
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/bar_chart2"
